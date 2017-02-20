@@ -1,7 +1,7 @@
 {
   "name": "y-zono/kong-hmac-php",
   "require": {
-    "monolog/monolog": "1.0.*"
+    
   },
   "autoload": {
     "psr-0": {
