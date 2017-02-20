@@ -1,0 +1,11 @@
+{
+  "name": "y-zono/kong-hmac",
+  "require": {
+    "monolog/monolog": "1.0.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "KongHmac": "."
+    }
+  }
+}
