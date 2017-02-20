@@ -1,7 +1,7 @@
 {
   "name": "y-zono/kong-hmac-php",
   "require": {
-    
+
   },
   "autoload": {
     "psr-0": {
