@@ -19,11 +19,13 @@ composer.json
 GET request:
 
 ```
+use \KongHmac\KongHmac;
+
 $userName = "user";
 $secret = "secret";
 $url = "https://example.com/items";
 
-$headers = KongHmac::generateRequestHeaders($userName, $secret, $url);
+$headers = \KongHmac\KongHmac::generateRequestHeaders($userName, $secret, $url);
 
 $httpClient = new \GuzzleHttp\Client();
 $httpClient->request("GET", $url, ["headers" => $headers]);
@@ -38,7 +40,7 @@ $url = "https://example.com/items";
 $data = ["a" => "x"];
 $contentType = "application/json";
 
-$headers = KongHmac::generateRequestHeaders($userName, $secret, $url, json_encode($data), $contentType);
+$headers = \KongHmac\KongHmac::generateRequestHeaders($userName, $secret, $url, json_encode($data), $contentType);
 
 $httpClient = new \GuzzleHttp\Client();
 $httpClient->request("POST", $url, ["json" => $data, "headers" => $headers]);
