@@ -4,8 +4,8 @@
 
   },
   "autoload": {
-    "psr-0": {
-      "KongHmac": "src/"
+    "psr-4": {
+      "KongHmac\\": "src/"
     }
   }
 }
