@@ -19,31 +19,45 @@ composer.json
 GET request:
 
 ```
-use \KongHmac\KongHmac;
+<?php
+
+require_once "vendor/autoload.php";
+
+use KongHmac\KongHmac;
 
 $userName = "user";
 $secret = "secret";
 $url = "https://example.com/items";
 
-$headers = \KongHmac\KongHmac::generateRequestHeaders($userName, $secret, $url);
+$headers = KongHmac::generateRequestHeaders($userName, $secret, $url);
 
 $httpClient = new \GuzzleHttp\Client();
-$httpClient->request("GET", $url, ["headers" => $headers]);
+$response = $httpClient->request("GET", $url, ["headers" => $headers]);
+
+print $response->getBody();
 ```
 
 POST request:
 
 ```
+<?php
+
+require_once "vendor/autoload.php";
+
+use KongHmac\KongHmac;
+
 $userName = "user";
 $secret = "secret";
 $url = "https://example.com/items";
 $data = ["a" => "x"];
 $contentType = "application/json";
 
-$headers = \KongHmac\KongHmac::generateRequestHeaders($userName, $secret, $url, json_encode($data), $contentType);
+$headers = KongHmac::generateRequestHeaders($userName, $secret, $url, json_encode($data), $contentType);
 
 $httpClient = new \GuzzleHttp\Client();
-$httpClient->request("POST", $url, ["json" => $data, "headers" => $headers]);
+$response = $httpClient->request("POST", $url, ["json" => $data, "headers" => $headers]);
+
+print $response->getBody();
 ```
 
 # Reference
